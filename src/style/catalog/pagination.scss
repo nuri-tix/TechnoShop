@@ -1,0 +1,32 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+
+  &__arrow {
+
+    &_start {
+      color: $color-grey-light;
+    }
+
+    &_end {}
+  }
+
+  &__list {
+    display: flex;
+    gap: 36px;
+  }
+
+  &__item {}
+
+  &__link {
+    font-size: 18px;
+    line-height: 1.2;
+
+    &_active {
+      border: 2px solid $color-main;
+      border-radius: 2px;
+      padding: 8px 15px;
+    }
+  }
+}

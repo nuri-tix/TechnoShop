@@ -1,0 +1,14 @@
+.social {
+  display: flex;
+  gap: 20px;
+
+  &__item {}
+
+  &__link {
+    transition: color .3s ease-in-out;
+
+    &:hover {
+      color: $color-main;
+    }
+  }
+}

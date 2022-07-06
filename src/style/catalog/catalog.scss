@@ -1,0 +1,16 @@
+.catalog {
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    gap: 72px 30px;
+  }
+
+  &__pagination {
+    grid-column: 1/3;
+  }
+}

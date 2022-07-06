@@ -13,6 +13,8 @@ body {
   min-width: 320px;
   min-height: 100vh;
   font-family: Montserrat, sans-serif;
+  color: $color-primary;
+  background: $color-secondary;
 }
 
 
@@ -26,6 +28,8 @@ svg {
 
 button {
   padding: 0;
+  border: 0;
+  background: transparent;
   cursor: pointer;
 }
 
@@ -43,10 +47,16 @@ ul {
 h1,
 h2,
 h3,
+h4,
 p,
-figure,
-fieldset {
+figure {
   margin: 0;
+}
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: none;
 }
 
 /*
@@ -68,7 +78,21 @@ fieldset {
 */
 
 .container {
-  max-width: 1240px;
+  max-width: 1880px;
   padding: 0 30px;
   margin: 0 auto;
+}
+
+.main {
+  padding: 44px 0 120px;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 1.2;
 }

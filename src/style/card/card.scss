@@ -1,0 +1,130 @@
+.card {
+  margin-bottom: 70px;
+
+  &__detalis {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 70px;
+  }
+
+  &__gallery {
+    max-width: 710px;
+  }
+
+  &__image {
+    margin-bottom: 20px;
+  }
+
+  &__slider-thumb {
+    max-width: 447px;
+  }
+
+  &__thumb-btn {
+    width: 120px;
+    height: 120px;
+
+    &_active img {
+      outline: 1px solid $color-main;
+    }
+  }
+
+  &__info {
+    width: 100%;
+    padding-top: 120px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__vender-code {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    margin-bottom: 63px;
+  }
+
+  &__control {
+    display: flex;
+    align-items: center;
+    margin-bottom: 70px;
+    max-width: 826px;
+  }
+
+  &__count {
+    max-width: 120px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 80px;
+  }
+
+  &__btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid $color-primary;
+    font-size: 30px;
+    line-height: 1;
+  }
+
+  &__number {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  &__price {
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 1.2;
+    margin-right: auto;
+  }
+
+  &__add-cart {
+    width: 352px;
+    height: 57px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.2;
+    color: $color-secondary;
+    background: $color-main;
+  }
+
+  &__params-list {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  &__params-item {
+    display: grid;
+    grid-template-columns: 210px max-content;
+    gap: 100px;
+  }
+
+  &__description {
+    max-width: 1450px;
+  }
+
+  &__description-title {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  &__description-text {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.4;
+  }
+}
+
+.swiper-wrapper {
+  padding: 5px;
+}
+
+.swiper-slide {
+  margin-bottom: 10px;
+}

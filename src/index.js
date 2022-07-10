@@ -2,6 +2,21 @@ import './index.html';
 import './cart.html';
 import './card.html';
 import './index.scss';
+import {
+  pagination
+} from "./modules/pagination";
+
+const paginationWrapper = document.querySelector('.pagination');
+const pageURL = new URL(location);
+
+const page = +pageURL.searchParams.get('page') || 1;
+
+try {
+  pagination(paginationWrapper, 10, page, 5);
+} catch (e) {
+  console.warn(e)
+  console.warn('Это не главная страница')
+}
 
 // import Swiper JS
 import Swiper, {
@@ -13,8 +28,8 @@ import 'swiper/css';
 import 'swiper/css/scrollbar';
 
 const thumbSwiper = new Swiper('.card__slider-thumb', {
-  spaceBetween: 44,
-  sliderPerView: 3,
+  spaceBetween: 4,
+  slidesPerView: 3,
   scrollbar: {
     el: '.swiper-scrollbar',
     draggable: true,
@@ -24,10 +39,10 @@ const thumbSwiper = new Swiper('.card__slider-thumb', {
 
 new Swiper('.card__image', {
   spaceBetween: 10,
-  sliderPerView: 1,
+  slidesPerView: 1,
   thumbs: {
     swiper: thumbSwiper,
-    slideThumbActiveClass: '.card__thumb-btn_active',
+    slideThumbActiveClass: 'card__thumb-btn_active',
   },
   modules: [Thumbs]
 });
@@ -36,7 +51,7 @@ new Swiper('.card__image', {
 
 new Swiper('.recommended__carousel', {
   spaceBetween: 30,
-  sliderPerView: 5,
+  slidesPerView: 5,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",

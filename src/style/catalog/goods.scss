@@ -5,9 +5,4 @@
     grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
     gap: 40px 30px;
   }
-
-  &__item {
-    min-width: 310px;
-    max-width: 340px;
-  }
 }

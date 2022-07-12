@@ -2,19 +2,56 @@
   display: flex;
   align-items: flex-start;
 
+  @include mobile {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px 18px;
+    position: relative;
+  }
+
   &__img {
     width: 200px;
     height: 200px;
     object-fit: cover;
     margin-right: 30px;
+
+    @include desktop {
+      width: 137px;
+      height: 137px;
+      margin-right: 8px;
+    }
+
+    @include tablet {
+      width: 104px;
+      height: 104px;
+      margin-right: 18px;
+    }
+
+    @include mobile {
+      margin-right: 0;
+    }
   }
 
   &__detail {
     display: flex;
     flex-direction: column;
-    flex-basis: 353px;
+    // flex-basis: 353px;
+    flex-basis: 42%;
     margin-right: 25px;
     padding-top: 28px;
+
+    @include desktop {
+      margin-right: 10px;
+    }
+
+    @include tablet {
+      flex-basis: 28%;
+      padding-top: 0;
+    }
+    @include mobile {
+      flex-basis: 51%;
+      margin-right: 25px;
+    }
   }
 
   &__title {
@@ -23,12 +60,22 @@
     line-height: 1.2;
     min-height: 54px;
     margin-bottom: 14px;
+
+    @include tablet {
+      font-size: 16px;
+      margin-bottom: 12px;
+      min-height: 44px;
+    }
   }
 
   &__vendor-code {
     font-weight: 500;
     font-size: 18px;
     line-height: 1.2;
+
+    @include tablet {
+      font-size: 12px;
+    }
   }
 
   &__control {
@@ -37,6 +84,11 @@
     justify-content: space-between;
     align-items: center;
     flex-grow: 1;
+
+    @include mobile {
+      justify-content: flex-start;
+      gap: 39px;
+    }
   }
 
   &__count {
@@ -46,6 +98,10 @@
     justify-content: space-between;
     align-items: center;
     margin-right: 70px;
+
+    @include desktop {
+      margin-right: 10px;
+    }
   }
 
   &__btn {
@@ -60,6 +116,10 @@
   &__number {
     font-size: 30px;
     line-height: 1.2;
+
+    @include tablet {
+      font-size: 20px;
+    }
   }
 
   &__price {
@@ -72,5 +132,13 @@
     width: 32px;
     height: 32px;
     color: $color-grey-light;
+
+    @include mobile {
+      width: 18px;
+      height: 18px;
+      position: absolute;
+      top: 2px;
+      right: 0;
+    }
   }
 }

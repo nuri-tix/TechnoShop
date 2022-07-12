@@ -2,6 +2,10 @@
   max-width: 340px;
   padding-top: 54px;
 
+  @include tablet {
+    display: none;
+  }
+
   &__form {
     position: relative;
   }
@@ -11,6 +15,14 @@
     font-size: 26px;
     line-height: 1.2;
     margin-bottom: 30px;
+
+    @include tablet {
+      font-size: 22px;
+    }
+
+    @include mobile {
+      font-size: 14px;
+    }
   }
 
   &__field-list {
@@ -34,6 +46,7 @@
 
   &__flex {
     display: flex;
+    justify-content: space-between;
     gap: 10px;
 
     &_column {
@@ -51,6 +64,10 @@
     border: 1px solid $color-primary;
     height: 38px;
 
+    @include laptop {
+      width: 145px;
+    }
+
     &_select {
       width: 100%;
       color: $color-grey;
@@ -60,8 +77,6 @@
       color: $color-grey;
     }
   }
-
-
 
   &__checkbox {
     margin-right: 10px;
@@ -76,6 +91,13 @@
     padding: 8px 20px;
     display: block;
     margin: 0 auto;
+    border: 1px solid transparent;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      background: $color-main;
+      border: 1px solid $color-main;
+    }
   }
 
   &__reset {
@@ -86,5 +108,10 @@
     font-size: 16px;
     line-height: 1.2;
     color: $color-grey;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      color: $color-primary;
+    }
   }
 }

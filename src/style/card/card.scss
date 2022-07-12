@@ -24,7 +24,7 @@
     height: 120px;
 
     &_active img {
-      outline: 1px solid $color-main;
+      outline: 1px solid $color-grey-light;
     }
   }
 
@@ -89,6 +89,11 @@
     line-height: 1.2;
     color: $color-secondary;
     background: $color-main;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      background: $color-main-sub;
+    }
   }
 
   &__params-list {

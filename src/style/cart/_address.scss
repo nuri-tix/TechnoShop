@@ -1,5 +1,4 @@
 .address {
-
   &__title {
     margin-bottom: 30px;
   }
@@ -8,6 +7,19 @@
     display: grid;
     grid-template-columns: repeat(3, 340px);
     gap: 30px;
+
+    @include desktop {
+      grid-template-columns: repeat(2, 340px);
+      gap: 20px;
+    }
+
+    @include laptop {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__item {
@@ -19,16 +31,31 @@
     border: 1px solid $color-primary;
     padding: 0 10px;
 
+    @include tablet {
+      font-size: 12px;
+    }
+
     &::placeholder {
       color: $color-grey;
     }
 
     &_btn {
       background: $color-primary;
+      border: 1px solid transparent;
       font-weight: 500;
       font-size: 16px;
       line-height: 1.2;
       color: $color-secondary;
+      transition: 0.3s ease-in-out;
+
+      @include tablet {
+        font-size: 12px;
+      }
+
+      &:hover {
+        background: $color-main;
+        border: 1px solid $color-main;
+      }
     }
   }
 
@@ -41,5 +68,18 @@
     font-size: 14px;
     line-height: 1.2;
     color: $color-grey;
+
+    @include desktop {
+      grid-template-columns: repeat(2, 340px);
+      grid-column: 2;
+    }
+
+    @include tablet {
+      font-size: 12px;
+    }
+
+    @include mobile {
+      grid-column: 1;
+    }
   }
 }

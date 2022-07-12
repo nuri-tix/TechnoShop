@@ -17,7 +17,6 @@ body {
   background: $color-secondary;
 }
 
-
 img,
 svg {
   max-width: 100%;
@@ -25,7 +24,6 @@ svg {
   height: auto;
   display: block;
 }
-
 
 button {
   padding: 0;
@@ -69,7 +67,6 @@ fieldset {
   transform: scale(0);
 }
 
-
 /*
 Пример контейнера
 Если контейнер 1180px по макету,
@@ -82,13 +79,43 @@ fieldset {
   max-width: 1880px;
   padding: 0 30px;
   margin: 0 auto;
+
+  @include desktop {
+    max-width: 1480px;
+  }
+
+  @include laptop {
+    max-width: 1000px;
+    padding: 0 15px;
+  }
+
+  @include tablet {
+    max-width: 670px;
+  }
+
+  @include mobile {
+    max-width: 320px;
+    padding: 0 10px;
+  }
+
+  &__cart {
+    padding: 0;
+  }
 }
 
 .main {
   padding: 44px 0 120px;
+
+  @include tablet {
+    padding: 24px 0 80px;
+  }
+
+  @include mobile {
+    padding-top: 35px;
+  }
 }
 
-input[type="search"]::-webkit-search-cancel-button {
+input[type='search']::-webkit-search-cancel-button {
   display: none;
 }
 
@@ -96,4 +123,8 @@ input[type="search"]::-webkit-search-cancel-button {
   font-weight: 700;
   font-size: 44px;
   line-height: 1.2;
+
+  @include mobile {
+    font-size: 30px;
+  }
 }

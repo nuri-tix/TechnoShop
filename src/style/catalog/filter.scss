@@ -44,6 +44,21 @@
     margin-bottom: 10px;
   }
 
+  &__label-select {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      background: url(img/down-arrow.svg) no-repeat;
+      width: 15px;
+      height: 9px;
+      top: 40%;
+      right: 35px;
+    }
+  }
+
   &__flex {
     display: flex;
     justify-content: space-between;
@@ -71,6 +86,8 @@
     &_select {
       width: 100%;
       color: $color-grey;
+      appearance: none;
+      cursor: pointer;
     }
 
     &::placeholder {

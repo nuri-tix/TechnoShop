@@ -4,15 +4,28 @@ import './card.html';
 import './index.scss';
 
 // import Swiper JS
-import Swiper, { Thumbs, Scrollbar } from 'swiper';
+import Swiper, {
+  Thumbs,
+  Scrollbar
+} from 'swiper';
 // import Swiper styles
 import 'swiper/css';
 import 'swiper/css/scrollbar';
 
-import { startPagination } from './modules/pagination';
-import { getGoods, getGoodsItem } from './modules/goodsService';
-import { renderGoods } from './modules/renderGoods';
-import { renderItem } from './modules/renderItem';
+import {
+  startPagination
+} from './modules/pagination';
+import {
+  getGoods,
+  getGoodsItem
+} from './modules/goodsService';
+import {
+  renderGoods
+} from './modules/renderGoods';
+import {
+  renderItem
+} from './modules/renderItem';
+
 
 try {
   const goodsList = document.querySelector('.goods__list');
@@ -29,7 +42,13 @@ try {
         </svg>
       </div>
     `;
-    getGoods({ page }).then(({ goods, pages, page }) => {
+    getGoods({
+      page
+    }).then(({
+      goods,
+      pages,
+      page
+    }) => {
       renderGoods(goodsList, goods);
       startPagination(paginationWrapper, pages, page);
     });
@@ -58,7 +77,14 @@ try {
     getGoodsItem(id).then((item) => {
       renderItem(item);
       preload.remove();
-    });
+      return item.category;
+    }).then(category => {
+      return getGoods({
+        category
+      }).then(data => {
+        console.log(data);
+      })
+    })
   }
 } catch (e) {
   console.warn(e);

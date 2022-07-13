@@ -7,3 +7,6 @@ export const getGoods = ({ page }) => {
 
   return fetch(url).then((response) => response.json());
 };
+
+export const getGoodsItem = (id) =>
+  fetch(`${API_URI}api/goods/${id}`).then((response) => response.json());

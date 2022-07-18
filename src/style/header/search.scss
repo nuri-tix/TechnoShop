@@ -38,3 +38,20 @@
     }
   }
 }
+
+.no-products {
+  font-size: 30px;
+  text-align: center;
+  grid-column: 1/5;
+  color: $color-main;
+  opacity: .5;
+  margin-top: 80px;
+
+  @include tablet {
+    margin-top: 20px;
+  }
+
+  @include mobile {
+    font-size: 20px;
+  }
+}

@@ -1,10 +1,5 @@
-import {
-  API_URI
-} from './var';
-import Swiper, {
-  Thumbs,
-  Scrollbar
-} from 'swiper';
+import { API_URI } from './var';
+import Swiper, { Thumbs, Scrollbar } from 'swiper';
 
 
 const createCardImageSlider = (largeImages) => {

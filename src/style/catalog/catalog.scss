@@ -20,6 +20,7 @@
 
     @include tablet {
       grid-template-columns: 1fr;
+      column-gap: 0;
       row-gap: 50px;
     }
 

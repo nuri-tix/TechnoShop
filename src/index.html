@@ -20,8 +20,8 @@
         <a class="header__logo-link" href="index.html">
           <img src="img/logo.svg" alt="Логотип TechnoShop" class="header__logo" />
         </a>
-        <form class="header__search search">
-          <input type="search" class="search__input" />
+        <form action="/" class="header__search search">
+          <input type="search" class="search__input" name="search" />
           <button class="search__btn" aria-label="найти товар">
             <svg width="24" height="24" viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -64,26 +64,31 @@
                 <fieldset class="filter__field">
                   <legend class="filter__field-title">Цена</legend>
                   <div class="filter__flex">
-                    <label><input type="number" name="price-start" class="filter__input" placeholder="от" /></label>
-                    <label><input type="number" name="price-end" class="filter__input" placeholder="до" /></label>
+                    <label>
+                      <input type="number" name="minprice" step="any" class="filter__input" placeholder="от" />
+                    </label>
+                    <label>
+                      <input type="number" name="maxprice" step="any" class="filter__input" placeholder="до" />
+                    </label>
                   </div>
                 </fieldset>
                 <fieldset class="filter__field">
                   <legend class="filter__field-title">Категория</legend>
                   <label class="filter__label-select">
-                    <select name="category" class="filter__input filter__input_select">
-                      <option value="all" selected>все категории</option>
-                      <option value="phone">Смартфоны</option>
-                      <option value="tab">Планшеты</option>
-                      <option value="clock">Умные часы</option>
+                    <select name="category" class="filter__input filter__input_select" id="category">
+                      <option value="" selected>все категории</option>
                     </select>
                   </label>
                 </fieldset>
                 <fieldset class="filter__field">
                   <legend class="filter__field-title">Диагональ</legend>
                   <div class="filter__flex">
-                    <label><input type="number" name="diagonal-start" class="filter__input" placeholder="от" /></label>
-                    <label><input type="number" name="diagonal-start" class="filter__input" placeholder="до" /></label>
+                    <label>
+                      <input type="number" name="mindisplay" step="any" class="filter__input" placeholder="от" />
+                    </label>
+                    <label>
+                      <input type="number" name="maxdisplay" step="any" class="filter__input" placeholder="до" />
+                    </label>
                   </div>
                 </fieldset>
                 <fieldset class="filter__field">
@@ -133,8 +138,8 @@
       </a>
       <div class="footer__column footer__catalog">
         <h3 class="footer__column-title">Каталог</h3>
-        <ul class="footer__list footer__list_double">
-          <li class="footer__item">
+        <ul class="footer__list footer__list_double" id="category-footer">
+          <!-- <li class="footer__item">
             <a href="#" class="footer__link">Смартфоны</a>
           </li>
           <li class="footer__item">
@@ -160,7 +165,7 @@
           </li>
           <li class="footer__item">
             <a href="#" class="footer__link">Процессоры</a>
-          </li>
+          </li> -->
         </ul>
       </div>
       <div class="footer__column footer__customer">

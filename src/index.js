@@ -4,37 +4,31 @@ import './card.html';
 import './index.scss';
 
 // import Swiper JS
-import Swiper, {
-  Thumbs,
-  Scrollbar
-} from 'swiper';
+import Swiper, {Thumbs, Scrollbar} from 'swiper';
 // import Swiper styles
 import 'swiper/css';
 import 'swiper/css/scrollbar';
 
-import {
-  startPagination
-} from './modules/pagination';
-import {
-  getGoods,
-  getGoodsItem
-} from './modules/goodsService';
-import {
-  renderGoods
-} from './modules/renderGoods';
-import {
-  renderItem
-} from './modules/renderItem';
+import {startPagination} from './modules/pagination';
+import {getGoods, getGoodsItem} from './modules/goodsService';
+import {renderGoods} from './modules/renderGoods';
+import {renderItem} from './modules/renderItem';
+import { filter } from './modules/filter';
+import { menuFooter } from './modules/menuFooter';
 
 
 try {
   const goodsList = document.querySelector('.goods__list');
   if (goodsList) {
+
+    
+
+    menuFooter();
+
     const paginationWrapper = document.querySelector('.pagination');
-
-    const pageURL = new URL(location);
-    const page = +pageURL.searchParams.get('page') || 1;
-
+    
+    filter(goodsList, paginationWrapper);
+    
     goodsList.innerHTML = `
       <div class="goods__preload">
         <svg width="250" height="250" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,13 +36,7 @@ try {
         </svg>
       </div>
     `;
-    getGoods({
-      page
-    }).then(({
-      goods,
-      pages,
-      page
-    }) => {
+    getGoods().then(({ goods, pages, page }) => {      
       renderGoods(goodsList, goods);
       startPagination(paginationWrapper, pages, page);
     });

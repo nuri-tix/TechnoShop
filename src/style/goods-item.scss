@@ -75,13 +75,15 @@
       background: $color-primary;
     }
 
-    @include mobile {
-      font-size: 12px;
+    @include tablet-hover {
+      &:hover {
+        background: $color-main;
+        border: 1px solid $color-main;
+      }
     }
 
-    &:hover {
-      background: $color-main;
-      border: 1px solid $color-main;
+    @include mobile {
+      font-size: 12px;
     }
   }
 }

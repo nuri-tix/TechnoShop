@@ -50,7 +50,7 @@
       align-items: center;
       gap: 5px;
       position: absolute;
-      top: 16px;
+      top: 13px;
       right: 20px;
       font-weight: 700;
       font-size: 22px;
@@ -63,6 +63,11 @@
         height: 18px;
         background: url(img/down-arrow.svg) no-repeat center;
       }
+    }
+
+    @include mobile {
+      top: 4px;
+      right: 10px;
     }
   }
 }

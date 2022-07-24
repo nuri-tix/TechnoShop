@@ -32,11 +32,20 @@ $mobile: 560px;
   }
 }
 
+/* прописать hover, чтобы не работал после 1000px */
+@mixin tablet-hover {
+  @media (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
 @mixin mobile {
   @media (max-width: #{$mobile}) {
     @content;
   }
 }
+
+
 
 @keyframes rotation {
   to {

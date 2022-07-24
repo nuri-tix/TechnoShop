@@ -108,6 +108,19 @@ export const renderItem = item => {
       el: swiperScrollbar,
       draggable: true,
     },
+
+    // breakpoints: {
+    //   768: {
+    //     spaceBetween: 20,
+    //   },
+    //   1024: {
+    //     spaceBetween: 27,
+    //   },
+    //   1600: {
+    //     spaceBetween: 44, 
+    //   },
+    // },
+
     modules: [Scrollbar],
   });
 

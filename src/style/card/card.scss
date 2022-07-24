@@ -3,36 +3,112 @@
   position: relative;
   min-height: 80vh;
 
+  @include tablet {
+    margin-bottom: 50px;
+  }
+
   &__detalis {
     display: flex;
     gap: 30px;
     margin-bottom: 70px;
+
+    @include desktop {
+      gap: 10px;
+    }
+
+    @include laptop {
+      gap: 20px;
+      margin-bottom: 57px;
+    }
+
+    @include tablet {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 50px;
+      margin-bottom: 50px;
+    }
+
+    @include mobile {
+      gap: 30px;
+      margin-bottom: 30px;
+    }
   }
 
   &__gallery {
     max-width: 710px;
+
+    @include desktop {
+      max-width: 50%;
+    }
+
+    @include laptop {
+      max-width: calc(50% - 10px);
+    }
+
+    @include tablet {
+      max-width: 310px;
+    }
+
+    @include mobile {
+      max-width: 200px;
+    }
   }
 
   &__image {
     margin-bottom: 20px;
+
+    @include tablet {
+      margin-bottom: 10px;
+    }
   }
 
   &__slider-thumb {
     max-width: 447px;
+
+    @include laptop {
+      max-width: 285px;
+    }
+
+    @include tablet {
+      max-width: 270px;
+    }
+
+    @include mobile {
+      max-width: 200px;
+    }
   }
 
   &__thumb-btn {
     width: 120px;
-    height: 120px;
 
     &_active img {
       outline: 1px solid $color-grey-light;
+    }
+
+    @include laptop {
+      width: 77px;
+    }
+
+    @include mobile {
+      width: 57px;
     }
   }
 
   &__info {
     width: 100%;
     padding-top: 120px;
+
+    @include desktop {
+      padding-top: 78px;
+    }
+
+    @include laptop {
+      padding-top: 46px;
+    }
+
+    @include tablet {
+      padding-top: 0;
+    }
   }
 
   &__title {
@@ -44,6 +120,18 @@
     font-size: 20px;
     line-height: 1.2;
     margin-bottom: 63px;
+
+    @include laptop {
+      margin-bottom: 30px;
+    }
+
+    @include tablet {
+      font-size: 16px;
+    }
+
+    @include mobile {
+      font-size: 12px;
+    }
   }
 
   &__control {
@@ -51,6 +139,22 @@
     align-items: center;
     margin-bottom: 70px;
     max-width: 826px;
+    gap: 50px;
+    flex-wrap: wrap;
+
+    @include laptop {
+      margin-bottom: 60px;
+    }
+
+    @include tablet {
+      margin-bottom: 50px;
+      flex-wrap: nowrap;
+    }
+
+    @include mobile {
+      gap: 25px 39px;
+      flex-wrap: wrap;
+    }
   }
 
   &__count {
@@ -59,7 +163,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-right: 80px;
   }
 
   &__btn {
@@ -74,13 +177,24 @@
   &__number {
     font-size: 30px;
     line-height: 1.2;
+
+    @include tablet {
+      font-size: 20px;
+    }
   }
 
   &__price {
     font-weight: 500;
     font-size: 34px;
     line-height: 1.2;
-    margin-right: auto;
+
+    @include tablet {
+      font-size: 26px;
+    }
+
+    @include mobile {
+      font-size: 20px;
+    }
   }
 
   &__add-cart {
@@ -96,20 +210,51 @@
     &:hover {
       background: $color-main-sub;
     }
+
+    @include desktop {
+      max-width: 340px;
+    }
+
+    @include tablet {
+      max-width: 310px;
+    }
+
+    @include mobile {
+      margin: 0 auto;
+      max-width: 200px;
+      height: 47px;
+      font-size: 12px;
+    }
   }
 
   &__params-list {
     font-weight: 500;
     font-size: 18px;
     line-height: 1.4;
+    max-width: 700px;
+
+    @include laptop {
+      font-size: 16px;
+    }
+
+    @include mobile {
+      font-size: 12px;
+    }
   }
 
   &__params-item {
     display: grid;
-    grid-template-columns: 210px 500px
-      /*max-content*/
-    ;
-    gap: 100px;
+    grid-template-columns: 285px 1fr;
+    gap: 80px;
+
+    @include laptop {
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    @include mobile {
+      gap: 30px;
+    }
   }
 
   &__description {
@@ -121,26 +266,28 @@
     font-size: 26px;
     line-height: 1.2;
     margin-bottom: 20px;
+
+    @include tablet {
+      font-size: 20px;
+      margin-bottom: 25px;
+    }
+
+    @include mobile {
+      margin-bottom: 10px;
+    }
   }
 
   &__description-text {
     font-weight: 500;
     font-size: 18px;
     line-height: 1.4;
-  }
 
-  &__preload {
-    position: absolute;
-    inset: 0;
-    z-index: 100;
-    background-color: $color-secondary;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include laptop {
+      font-size: 16px;
+    }
 
-    svg {
-      transform: rotate(0);
-      animation: rotation 1s infinite linear;
+    @include mobile {
+      font-size: 12px;
     }
   }
 }

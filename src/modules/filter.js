@@ -1,10 +1,30 @@
 
 import { getCategory, getGoods } from "./goodsService";
+import { hideOverlay, showOverlay } from "./overlay";
 import { startPagination } from "./pagination";
 import { renderGoods } from "./renderGoods";
 
+const toggleFilter = (filter, catalogFilterBtn, filterTitle) => {
+  catalogFilterBtn.addEventListener('click', () => {
+    filter.classList.add('filter_show');
+    showOverlay();
+  });
+
+  filterTitle.addEventListener('click', () => {
+    filter.classList.remove('filter_show');
+    hideOverlay();
+  }); 
+}
+
+
+
 export const filter = (goodsList, paginationWrapper) => {
+  const filter = document.querySelector('.filter');
+  const catalogFilterBtn = document.querySelector('.catalog__filter-btn')
   const category = document.querySelector('#category');
+  const filterTitle = document.querySelector('.filter__title');
+
+  toggleFilter(filter, catalogFilterBtn, filterTitle);
 
   getCategory().then(categoryList => {
     for (const categoryListKey in categoryList) {
@@ -62,13 +82,13 @@ export const filter = (goodsList, paginationWrapper) => {
 
     for (const key in data) {
       url.searchParams.set(key, data[key]);
-    };
+    }
 
     history.pushState(null, null, url);
    
     getGoods().then(({ goods, pages, page }) => { 
-      // filter.classList.remove('filter_show')
-      // hideOverlay();
+      filter.classList.remove('filter_show');
+      hideOverlay();
       renderGoods(goodsList, goods);
       startPagination(paginationWrapper, pages, page);
     });

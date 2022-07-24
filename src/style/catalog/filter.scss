@@ -4,6 +4,23 @@
 
   @include tablet {
     display: none;
+    position: absolute;
+    background: $color-secondary;
+    top: 0;
+    right: 0;
+    z-index: 555;
+    padding: 14px 20px 26px;
+
+    &_show {
+      display: block;
+      right: 20px;
+
+      @include mobile {
+        width: 100%;
+        padding: 14px 10px;
+        right: 0;
+      }
+    }
   }
 
   &__form {
@@ -17,7 +34,21 @@
     margin-bottom: 30px;
 
     @include tablet {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 5px;
       font-size: 22px;
+      cursor: pointer;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 18px;
+        height: 18px;
+        background: url(img/down-arrow.svg) no-repeat center;
+        transform: rotate(180deg);
+      }
     }
 
     @include mobile {
@@ -42,6 +73,10 @@
     font-size: 20px;
     line-height: 1.2;
     margin-bottom: 10px;
+
+    @include mobile {
+      font-size: 16px;
+    }
   }
 
   &__label-select {
@@ -57,6 +92,12 @@
       top: 40%;
       right: 35px;
     }
+
+    &:focus {
+      &::after {
+        transform: rotate(180deg);
+      }
+    }
   }
 
   &__flex {
@@ -68,6 +109,10 @@
       flex-direction: column;
       font-size: 16px;
       line-height: 1.2;
+
+      @include mobile {
+        font-size: 14px;
+      }
     }
   }
 
@@ -93,6 +138,10 @@
     &::placeholder {
       color: $color-grey;
     }
+
+    @include mobile {
+      font-size: 14px;
+    }
   }
 
   &__checkbox {
@@ -115,6 +164,14 @@
       background: $color-main;
       border: 1px solid $color-main;
     }
+
+    @include tablet {
+      margin-bottom: 15px;
+    }
+
+    @include mobile {
+      font-size: 12px;
+    }
   }
 
   &__reset {
@@ -129,6 +186,16 @@
 
     &:hover {
       color: $color-primary;
+    }
+
+    @include tablet {
+      position: static;
+      display: block;
+      margin: 0 auto;
+    }
+
+    @include mobile {
+      font-size: 12px;
     }
   }
 }
